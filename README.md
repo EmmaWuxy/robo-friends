@@ -1,5 +1,5 @@
-# ROBOT FRIENDS App
-An web Application that allows you to explore the existing robots in the world. You will be able to search and view their contact information.
+# Robot Friends App
+A web Application that allows you to explore the existing robots in the world. You will be able to search and view their contact information.
 
 The App is developed following the course of [ZTM](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/) to polish the skill of JavaScript and React.js.
 
