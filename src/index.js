@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App' // When the file does not have extension, assuems to be .js
+import App from './containers/App' // When the file does not have extension, assuems to be .js
 import 'tachyons';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
