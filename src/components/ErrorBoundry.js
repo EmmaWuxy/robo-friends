@@ -10,7 +10,7 @@ class ErrorBoundry extends Component {
 
     componentDidCatch(error, info){
         this.setState({ hasError: true });
-    }
+    }  // React runs this method when there is an error
 
     render() {
         if (this.state.hasError){
