@@ -8,9 +8,16 @@ class App extends Component {
     constructor(){
         super();
         this.state = {
-            robots: robots,
+            robots: [],
             searchfield: ''
         };
+    }
+
+    // one of React life cycle mounting methods. This method runs every time React mount the component to root
+    componentDidMount(){
+        fetch("https://jsonplaceholder.typicode.com/users") // a window object that makes request
+            .then(response => response.json())
+            .then(users => this.setState({ robots: users }));
     }
 
     onSearchChange = (event) => {
@@ -21,13 +28,18 @@ class App extends Component {
         const filteredRobots = this.state.robots.filter(robot =>{
             return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase()); 
         });
-        return (
-            <div className="tc">
-                <h1 className="f1">RoboFriends</h1>
-                <SearchBox searchChange={this.onSearchChange}/>
-                <CardList robots={filteredRobots}/>
-            </div>
-        );
+        if (this.state.robots.length === 0){
+            return <h1>Loading...</h1>
+        }
+        else{
+            return (
+                <div className="tc">
+                    <h1 className="f1">RoboFriends</h1>
+                    <SearchBox searchChange={this.onSearchChange}/>
+                    <CardList robots={filteredRobots}/>
+                </div>
+            );
+        }
     };
 }
 
